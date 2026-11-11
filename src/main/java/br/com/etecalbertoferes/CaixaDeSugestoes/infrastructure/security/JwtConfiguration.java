@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -59,4 +59,4 @@ public class JwtConfiguration {
                 requiredTimes));
         return decoder;
     }
-}
+}*/

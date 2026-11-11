@@ -4,9 +4,9 @@ spring:
   application:
     name: CaixaDeSugestoes
   datasource:
-    url: ${DB_URL:jdbc:postgresql://localhost:5432/suggestions}
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:Jouninja26}
+    url: ${DB_URL:jdbc:mariadb://localhost:3306/suggestions}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
   jpa:
     open-in-view: false
     hibernate:
@@ -22,8 +22,3 @@ springdoc:
     path: /swagger-ui.html
   api-docs:
     path: /v3/api-docs
-app:
-  jwt:
-    secret-base64: ${JWT_SECRET_BASE64:}
-    key-file: ${JWT_KEY_FILE:.local/jwt-signing.key}
-    ttl-seconds: ${JWT_TTL_SECONDS:900}

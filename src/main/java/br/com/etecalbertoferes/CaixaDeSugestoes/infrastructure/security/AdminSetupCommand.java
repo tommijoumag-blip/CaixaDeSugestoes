@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
 
 import java.io.Console;
 import java.util.Arrays;
@@ -27,4 +27,4 @@ public final class AdminSetupCommand {
             if (confirmation != null) Arrays.fill(confirmation, '\0');
         }
     }
-}
+}*/

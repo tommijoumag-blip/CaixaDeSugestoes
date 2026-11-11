@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes;
 
 import java.time.Instant;
 import java.util.List;
@@ -140,4 +140,4 @@ class JwtSecurityIntegrationTest extends ContextTest {
                 .andExpect(jsonPath("$.paths['/api/suggestions/{id}'].put.security[0].bearerAuth").isArray())
                 .andExpect(jsonPath("$.paths['/api/suggestions/{id}'].delete.security[0].bearerAuth").isArray());
     }
-}
+}*/

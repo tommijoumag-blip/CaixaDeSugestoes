@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.persistence;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.persistence;
 
 import java.util.Optional;
 import jakarta.persistence.EntityManager;
@@ -26,4 +26,4 @@ public class AdminAccountPersistenceAdapter implements AdminAccountRepository {
         repository.saveAndFlush(entity);
         return true;
     }
-}
+}*/

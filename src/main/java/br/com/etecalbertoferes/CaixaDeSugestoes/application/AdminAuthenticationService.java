@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes.application;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes.application;
 
 import java.time.Instant;
 import java.util.List;
@@ -35,4 +35,4 @@ public class AdminAuthenticationService {
         return new AccessToken(token, "Bearer", ttl);
     }
     public record AccessToken(String accessToken, String tokenType, long expiresIn) {}
-}
+}*/

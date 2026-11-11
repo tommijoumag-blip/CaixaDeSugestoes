@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes.interfaces.rest;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes.interfaces.rest;
 
 import jakarta.validation.Valid;
 import org.springframework.http.*;
@@ -28,4 +28,4 @@ public class AdminAuthController {
         return ResponseEntity.ok().cacheControl(CacheControl.noStore()).header(HttpHeaders.PRAGMA, "no-cache")
                 .body(service.login(request.username(), request.password()));
     }
-}
+}*/

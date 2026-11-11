@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes.application;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes.application;
 
 import java.nio.charset.StandardCharsets;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -21,4 +21,4 @@ public class AdminProvisioningService {
         if (!accounts.createInitial(username, encoder.encode(password)))
             throw new IllegalStateException("Já existe administrador; o provisionamento não altera contas existentes");
     }
-}
+}*/

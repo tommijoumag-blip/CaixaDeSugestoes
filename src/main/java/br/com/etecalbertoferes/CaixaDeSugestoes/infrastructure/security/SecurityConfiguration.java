@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
 
 import jakarta.servlet.DispatcherType;
 import org.springframework.context.annotation.*;
@@ -39,4 +39,4 @@ public class SecurityConfiguration {
                 .exceptionHandling(ex -> ex.authenticationEntryPoint(unauthorized).accessDeniedHandler(forbidden))
                 .build();
     }
-}
+}*/

@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -40,4 +40,4 @@ public final class JwtKeyStore {
             throw new IllegalStateException("Não foi possível ler ou gravar a chave JWT; configure JWT_KEY_FILE em uma pasta gravável", ex);
         }
     }
-}
+}*/

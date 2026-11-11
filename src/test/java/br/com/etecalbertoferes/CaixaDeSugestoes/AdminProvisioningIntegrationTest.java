@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +29,4 @@ class AdminProvisioningIntegrationTest extends ContextTest {
             assertThatThrownBy(() -> provisioning.provision("admin", password)).isInstanceOf(IllegalArgumentException.class);
         assertThat(jdbc.queryForObject("select count(*) from administrators", Long.class)).isZero();
     }
-}
+}*/

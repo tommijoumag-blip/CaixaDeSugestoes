@@ -1,4 +1,4 @@
-package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
+/*package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
 
 import java.io.Console;
 import java.nio.charset.StandardCharsets;
@@ -26,4 +26,4 @@ public final class AdminPasswordHash {
             Arrays.fill(password, '\0');
         }
     }
-}
+}*/
