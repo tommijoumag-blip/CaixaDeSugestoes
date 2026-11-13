@@ -1,4 +1,4 @@
-/*package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.persistence;
+package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.persistence;
 
 import jakarta.persistence.*;
 @Entity
@@ -9,4 +9,4 @@ public class AdminAccountEntity {
     @Column(name = "password_hash", nullable = false, length = 60) String passwordHash;
     @Column(nullable = false) boolean active;
     protected AdminAccountEntity() {}
-}*/
+}

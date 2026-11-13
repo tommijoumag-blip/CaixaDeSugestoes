@@ -1,4 +1,4 @@
-/*package br.com.etecalbertoferes.CaixaDeSugestoes;
+package br.com.etecalbertoferes.CaixaDeSugestoes;
 
 import java.time.Instant;
 import java.util.List;
@@ -132,6 +132,34 @@ class JwtSecurityIntegrationTest extends ContextTest {
                     .andExpect(status().isUnauthorized());
         } finally { jdbc.update("update administrators set active=true where username=?", "test-admin"); }
     }
+    @Test void swaggerExposesAllQueryAndPathInputs() throws Exception {
+        var response = mvc.perform(get("/v3/api-docs")).andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsString();
+        var paths = mapper.readTree(response).get("paths");
+        var parameters = paths.get("/api/suggestions").get("get").get("parameters");
+        assertThat(parameters.size()).isEqualTo(3);
+        var byName = new java.util.HashMap<String, tools.jackson.databind.JsonNode>();
+        parameters.forEach(parameter -> byName.put(parameter.get("name").asText(), parameter));
+        assertThat(byName.keySet()).containsExactlyInAnyOrder("courseId", "categoryId", "q");
+        for (String name : List.of("courseId", "categoryId", "q")) {
+            var parameter = byName.get(name);
+            assertThat(parameter.get("in").asText()).isEqualTo("query");
+            assertThat(parameter.get("required").asBoolean()).isFalse();
+            assertThat(parameter.get("example").asText()).isNotBlank();
+            assertThat(parameter.get("schema").get("type").asText())
+                    .isEqualTo(name.equals("q") ? "string" : "integer");
+        }
+        for (String method : List.of("get", "put", "delete")) {
+            var inputs = paths.get("/api/suggestions/{id}").get(method).get("parameters");
+            assertThat(inputs.size()).isEqualTo(1);
+            assertThat(inputs.get(0).get("name").asText()).isEqualTo("id");
+            assertThat(inputs.get(0).get("in").asText()).isEqualTo("path");
+            assertThat(inputs.get(0).get("required").asBoolean()).isTrue();
+        }
+        for (String path : List.of("/api/suggestions", "/api/auth/login"))
+            assertThat(paths.get(path).get("post").get("requestBody").get("required").asBoolean()).isTrue();
+        assertThat(paths.get("/api/suggestions/{id}").get("put").get("requestBody").get("required").asBoolean()).isTrue();
+    }
     @Test void swaggerMarksOnlyMutationsWithBearerSecurity() throws Exception {
         mvc.perform(get("/v3/api-docs")).andExpect(status().isOk())
                 .andExpect(jsonPath("$.components.securitySchemes.bearerAuth.scheme").value("bearer"))
@@ -140,4 +168,4 @@ class JwtSecurityIntegrationTest extends ContextTest {
                 .andExpect(jsonPath("$.paths['/api/suggestions/{id}'].put.security[0].bearerAuth").isArray())
                 .andExpect(jsonPath("$.paths['/api/suggestions/{id}'].delete.security[0].bearerAuth").isArray());
     }
-}*/
+}

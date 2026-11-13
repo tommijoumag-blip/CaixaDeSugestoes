@@ -1,4 +1,4 @@
-/*package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
+package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
 
 import org.springframework.context.annotation.*;
 import org.springframework.security.authentication.*;
@@ -23,4 +23,4 @@ public class AdminConfiguration {
         provider.setPasswordEncoder(encoder);
         return new ProviderManager(provider);
     }
-}*/
+}

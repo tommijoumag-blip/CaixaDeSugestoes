@@ -15,6 +15,7 @@ import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
+@org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc(addFilters = false)
 @WebMvcTest(SuggestionController.class)
 class SuggestionControllerTest {
     @Autowired MockMvc mvc;
@@ -36,6 +37,13 @@ class SuggestionControllerTest {
     @Test void emptyListIsArray() throws Exception {
         when(service.list(null, null, null)).thenReturn(List.of());
         mvc.perform(get("/api/suggestions")).andExpect(status().isOk()).andExpect(content().json("[]"));
+    }
+    @Test void combinedQueryParametersReachService() throws Exception {
+        when(service.list(1L, 2L, "biblioteca")).thenReturn(List.of(example()));
+        mvc.perform(get("/api/suggestions").param("courseId", "1")
+                        .param("categoryId", "2").param("q", "biblioteca"))
+                .andExpect(status().isOk()).andExpect(jsonPath("$[0].id").value(7));
+        verify(service).list(1L, 2L, "biblioteca");
     }
     @Test void getUpdateAndDelete() throws Exception {
         when(service.get(7L)).thenReturn(example());

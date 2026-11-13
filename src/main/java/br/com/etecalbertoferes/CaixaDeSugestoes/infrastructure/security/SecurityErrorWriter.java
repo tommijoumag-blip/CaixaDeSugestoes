@@ -1,4 +1,4 @@
-/*package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
+package br.com.etecalbertoferes.CaixaDeSugestoes.infrastructure.security;
 
 import java.io.IOException;
 import java.time.Instant;
@@ -25,4 +25,4 @@ public class SecurityErrorWriter {
         mapper.writeValue(response.getOutputStream(),
                 new ApiError(Instant.now(), status, message, request.getRequestURI(), Map.of()));
     }
-}*/
+}
